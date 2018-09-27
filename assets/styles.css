@@ -103,22 +103,26 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.thumbs__link.active,
-.thumbs__link:hover,
-.thumbs__link:focus {
+.thumb.active,
+.thumb:hover,
+.thumb:focus {
   outline: 1px solid white;
 }
 
-.thumbs__link__img {
+.thumb {
   animation: 0.25s forwards fade-in;
 
   display: block;
-  width: 100%;
-  height: 100%;
-  max-height: var(--thumb-h);
   opacity: 0;
   object-fit: cover;
-  pointer-events: none;
+
+  flex: 0 0 auto;
+
+  width: var(--thumb-w);
+  height: var(--thumb-h);
+  margin: 0 1px;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Credits
