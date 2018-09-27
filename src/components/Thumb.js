@@ -1,21 +1,25 @@
-import React from 'react';
+import React from "react";
 
 class Thumb extends React.Component {
-constructor() {
-  super(); 
+  constructor() {
+    super();
 
-  this.handleClick = this.handleClick.bind(this)
-  // bind function to "this" - i.e. class Thumb
+    this.handleClick = this.handleClick.bind(this);
+    // bind function to "this" - i.e. class Thumb
+  }
+  handleClick(event) {
+    // use receiver function to pass data back to parent
+    this.props.receivePhotos(this.props.imgobj);
+  }
 
-}
-handleClick(event) {
-    this.props.receivePhotos(this.props.imgobj)
-}
-
-
-  render(){
+  render() {
     return (
-    <img src={this.props.imageLink} onClick={this.handleClick} imgobj={this.props.imgobj}/>
+      <img
+        // controlled inputs
+        src={this.props.imageLink}
+        onClick={this.handleClick}
+        imgobj={this.props.imgobj}
+      />
     );
   }
 }
